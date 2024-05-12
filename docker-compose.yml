@@ -1,0 +1,40 @@
+# # version: "3"
+# # services:
+# #   web:
+# #    build:
+# #      context: .
+# #      dockerfile: Dockerfile.dev
+# #    ports:
+# #     - "5173:5173"
+# #    volumes:
+# #     - /app/node_modules
+# #     - .:/app
+# version: "3"
+# services:
+#   web:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.dev  # Assuming your dev Dockerfile exists
+#     ports:
+#       - "5173:5173"
+#     volumes:
+#       - /app/node_modules
+#       - .:/app  # Mount current directory for development changes
+#     working_dir: /app  # Set working directory (optional, assuming Dockerfile sets it too)
+
+version: "3"
+
+services:
+  web:
+    build:
+      context: .  # Build context: current directory (your project)
+      dockerfile: Dockerfile.dev  # Assuming your dev Dockerfile exists
+    ports:
+      - "5173:5173"  # Expose Vite dev server port (modify if needed)
+    volumes:
+      - /app/node_modules
+      - .:/app  # Mount current directory for development changes
+    working_dir: /app  # Set working directory (optional, ensure consistency with Dockerfile)
+
+    # Command to run your Vite React application (modify if different)
+    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]  # Add --host flag with 0.0.0.0

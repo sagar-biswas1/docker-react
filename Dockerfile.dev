@@ -1,0 +1,21 @@
+# Use official Node.js image as the base image
+FROM node:latest
+
+# Set the working directory inside the container
+WORKDIR /app
+
+
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install --silent
+
+# Copy the entire project to the working directory
+COPY . .
+
+# Build the React application
+# RUN npm run build
+
+EXPOSE 5173
+
+# Define the command to run your application
+CMD ["npm", "run","dev"]
