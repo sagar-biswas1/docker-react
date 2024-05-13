@@ -1,26 +1,3 @@
-# # version: "3"
-# # services:
-# #   web:
-# #    build:
-# #      context: .
-# #      dockerfile: Dockerfile.dev
-# #    ports:
-# #     - "5173:5173"
-# #    volumes:
-# #     - /app/node_modules
-# #     - .:/app
-# version: "3"
-# services:
-#   web:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile.dev  # Assuming your dev Dockerfile exists
-#     ports:
-#       - "5173:5173"
-#     volumes:
-#       - /app/node_modules
-#       - .:/app  # Mount current directory for development changes
-#     working_dir: /app  # Set working directory (optional, assuming Dockerfile sets it too)
 
 version: "3"
 
