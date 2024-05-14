@@ -1,8 +1,8 @@
 import React from "react";
-import { it, describe, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+// import { it, describe, expect } from "vitest";
+import { render, screen } from '@testing-library/react'
 import Navbar from "../../src/components/Navbar";
-import "@testing-library/jest-dom/vitest"
+
 describe("Navbar", () => {
   it("should render hello with name when name is provided", () => {
     render(<Navbar name="sagar" />);
